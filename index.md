@@ -7,8 +7,8 @@ The Shiny package allows you to use R to quickly and easily create and share a w
 ## Goals
 
 <ul>
-  <li> Use and expand a basic template to quickly make an interactive R Shiny app that lets a user explore data</li>
-  <li> Know and use common input and output functions for interactivity </li>
+  <li> Use and expand a basic template to quickly make an interactive R Shiny app that allows a user to explore data</li>
+  <li> Know and use common Shiny input and output functions for interactivity </li>
   <li> Understand the concept of reactivity in Shiny, and how to control the propogation of changes from inputs to outputs </li>
   <li> Customize the appearance of a Shiny app</li>
   <li> Share a Shiny app publicly on the internet</li>
@@ -21,9 +21,10 @@ The Shiny package allows you to use R to quickly and easily create and share a w
 
 ## Before the workshop
 
-1. [Download](https://cran.case.edu/) and install R, if you do not already have it: 
-2. [Install RStudio Desktop](https://rstudio.com/products/rstudio/download/), (the free open source license suffices).
-3. Complete the [pre-course survey](https://docs.google.com/forms/d/e/1FAIpQLSf9sL4Xs8HQ0k--6eeXfc55geJbwQpx04nNmX7Hu9zISCZw3w/viewform?usp=sf_link)(5 min).
+1. [Download](https://cran.case.edu/) and install R, if you do not already have it. (5 min)
+2. [Install RStudio Desktop](https://rstudio.com/products/rstudio/download/), (the free open source license suffices). (5 min)
+3.  Make a free account at [shinyapps.io](https://www.shinyapps.io/) and follow steps 1 and 2 in the "Getting Started" panel you will see on your dashboard (Step 1 - Install rsconnect, Step 2 - authorize account).  You'll use shinyapp.io to host your app so that you can share it publicly. (5 min)
+4. Complete the [pre-course survey](https://docs.google.com/forms/d/e/1FAIpQLSf9sL4Xs8HQ0k--6eeXfc55geJbwQpx04nNmX7Hu9zISCZw3w/viewform?usp=sf_link) (5 min).
 
 Pre-course video-conference office hours:
 TBD: Please drop in with any questions, or if you run into trouble with the pre-workshop steps
@@ -34,3 +35,7 @@ TBD: Please drop in with any questions, or if you run into trouble with the pre-
 [Workshop instructions](r_shiny_workshop.md)
 
 ## Topic outline
+
+1. What is a Shiny app?
+2. Make your first Shiny app
+3. Publish your shiny app

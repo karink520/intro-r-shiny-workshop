@@ -34,10 +34,14 @@ TBD: Please drop in with any questions, or if you run into trouble with the pre-
 
 [Workshop instructions](r_shiny_workshop.md)
 
+[Brief Shiny function reference](shiny_reference.md) (adapted from [Function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/))
+
+
+
 ## Topic outline
 
 1. What is a Shiny app and why make one?
-2. Making a simple Shiny app
+2. Making a Shiny app
 
     a. A basic template
 
@@ -45,24 +49,23 @@ TBD: Please drop in with any questions, or if you run into trouble with the pre-
 
     c. Layouts, panels, and appearance
 
-    d. Shiny Input and Output functions
+    d. Input and Output functions
     
-    e. Reactivity and connecting inputs and outputs with render* expressions
-3. Practice session
-4. Understanding  reactivity
+    e. Reactivity and connecting outputs to inputs with render* expressions
+3. Understanding  reactivity
 
     a. Reactive values and functions
 
     b. Additional control of reactivity with isolate, observeEvent, eventReactive, reactiveValues
 
-5. Publishing your app on the web
+4. Publishing your app on the web
 
-6. Additional topics: images, customized styling 
+5. Additional topics
 
 ## Resources
 
 Excellent tutorials and other learning resources on R Shiny from RStudio's [Learn Shiny](https://shiny.rstudio.com/tutorial/) page
 
-Function reference: https://shiny.rstudio.com/reference/shiny/1.4.0/
+[Function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/)
 
 <br>

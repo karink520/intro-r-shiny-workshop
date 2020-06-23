@@ -41,17 +41,28 @@ TBD: Please drop in with any questions, or if you run into trouble with the pre-
 
     a. A basic template
 
-    b. Structure of the app and role of the ui and server objects
+    b. App structure and role of the ui and server objects
 
     c. Layouts, panels, and appearance
 
     d. Shiny Input and Output functions
     
     e. Reactivity and connecting inputs and outputs with render* expressions
-3. Understanding  reactivity
+3. Practice session
+4. Understanding  reactivity
 
     a. Reactive values and functions
 
-    b. Additional controls with isolate, observeEvent, eventReactive, reactiveValues
+    b. Additional control of reactivity with isolate, observeEvent, eventReactive, reactiveValues
 
-4. Publishing your app on the web with shinyapp.io
+5. Publishing your app on the web
+
+6. Additional topics: images, customized styling 
+
+## Resources
+
+Excellent tutorials and other learning resources on R Shiny from RStudio's [Learn Shiny](https://shiny.rstudio.com/tutorial/) page
+
+Function reference: https://shiny.rstudio.com/reference/shiny/1.4.0/
+
+<br>

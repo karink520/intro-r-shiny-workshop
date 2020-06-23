@@ -36,6 +36,22 @@ TBD: Please drop in with any questions, or if you run into trouble with the pre-
 
 ## Topic outline
 
-1. What is a Shiny app?
-2. Make your first Shiny app
-3. Publish your shiny app
+1. What is a Shiny app and why make one?
+2. Making a simple Shiny app
+
+    a. A basic template
+
+    b. Structure of the app and role of the ui and server objects
+
+    c. Layouts, panels, and appearance
+
+    d. Shiny Input and Output functions
+    
+    e. Reactivity and connecting inputs and outputs with render* expressions
+3. Understanding  reactivity
+
+    a. Reactive values and functions
+
+    b. Additional controls with isolate, observeEvent, eventReactive, reactiveValues
+
+4. Publishing your app on the web with shinyapp.io

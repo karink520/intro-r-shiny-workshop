@@ -14,7 +14,7 @@ The Shiny package allows you to use R to quickly and easily create and share a w
   <li> Share a Shiny app publicly on the internet</li>
 </ul>
 
-## Prerequisites:
+## Prerequisites
 
  Experience with R at the beginning level or above, preferably including experience making plots in R. (The TTS TIDAL workshops “A Gentle Introduction to R” and “Data Visualization in R” would be good preparation.)
 
@@ -34,7 +34,7 @@ TBD: Please drop in with any questions, or if you run into trouble with the pre-
 
 [Workshop instructions](r_shiny_workshop.md)
 
-[Brief Shiny function reference](shiny_reference.md) (adapted from [Function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/))
+[Abbreviated Shiny function reference](shiny_reference.md) (adapted from Shiny's [function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/))
 
 
 
@@ -62,9 +62,9 @@ TBD: Please drop in with any questions, or if you run into trouble with the pre-
 
 5. Additional topics
 
-## Resources
+## Additional Resources
 
-Excellent tutorials and other learning resources on R Shiny from RStudio's [Learn Shiny](https://shiny.rstudio.com/tutorial/) page
+RStudio's [Learn Shiny](https://shiny.rstudio.com/tutorial/) page has excellent tutorials and other learning resources
 
 [Function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/)
 

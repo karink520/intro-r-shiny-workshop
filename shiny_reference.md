@@ -5,20 +5,23 @@ sidebarLayout |
 splitLayout |
 verticalLayout |
 flowLayout |
+|
 navbarPage |
 navbarMenu |
 fluidPage |
+ |
 fluidRow | 
 column | 
+|
 tabsetPanel |
 tabPanel |
 navlistPanel |
 titlePanel |
 sidebarPanel |
-headerPanel | 
 conditionalPanel |
 mainPanel |
 wellPanel |
+|
 fixedPage |
 fixedRow |
 
@@ -26,7 +29,7 @@ fixedRow |
 
 ## Widgets and *Input functions
 
-|function |	widget|
+|Function |	Widget|
 |----------|---------|
 actionButton | Action Button
 checkboxGroupInput |	A group of check boxes
@@ -69,7 +72,7 @@ renderUI | a Shiny tag object or HTML
 
 ## Important functions for controlling reactivity
 
-Funtion | Description/ details
+Function | Description/ details
 --------|-----
 reactive | Wraps a normal expression to create a reactive expression
 isolate | Executes the given expression in a scope where reactive values or expression can be read, but they cannot cause the reactive scope of the caller to be re-evaluated when they change. 

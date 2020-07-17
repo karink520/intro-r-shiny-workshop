@@ -30,9 +30,9 @@ Pre-course video-conference office hours:
 TBD: Please drop in with any questions, or if you run into trouble with the pre-workshop steps
 
 ## Workshop materials
-[Slides](r_shiny_slides.pdf)
+[Slides](shiny_workshop_slides.pdf)
 
-[Workshop instructions](r_shiny_workshop.md)
+[Workshop instructions](shiny_workshop.md)
 
 [Abbreviated Shiny function reference](shiny_reference.md) (adapted from Shiny's [function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/))
 

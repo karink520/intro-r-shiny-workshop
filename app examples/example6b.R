@@ -27,7 +27,7 @@ ui <- fluidPage(
                             height=400)
         ),
         tabPanel("Hints",
-       )
+        )
       )
     )
   )
@@ -44,7 +44,7 @@ server <- function(input, output, session) {
   
   samples <- reactive({list(x_vals = rnorm(input$numSamples),
                             y_vals = rnorm(input$numSamples))})
-
+  
   title_text <- eventReactive(input$updateButton, {input$title}, ignoreNULL=FALSE)
   
   output$scatterPlot <- renderPlot(

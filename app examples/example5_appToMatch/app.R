@@ -36,7 +36,7 @@ ui <- fluidPage(
   )
 )
 
-server <- function(input, output) {
+server <- function(input, output, session) {
     output$scatterPlot <- renderPlot(
         plot(
           rnorm(input$numSamples),

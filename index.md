@@ -51,21 +51,29 @@ TBD: Please drop in with any questions, or if you run into trouble with the pre-
 
     d. Input and Output functions
     
-    e. Reactivity and connecting outputs to inputs with render* expressions
-3. Understanding  reactivity
+    e. Basic eactivity and connecting outputs to inputs with render* expressions
+3. Practice
+4. Understanding  reactivity
 
     a. Reactive values and functions
 
-    b. Additional control of reactivity with isolate, observeEvent, eventReactive, reactiveValues
+    b. Additional control of reactivity with isolate, eventReactive, observeEvent, and more
 
-4. Publishing your app on the web
+5. Publishing your app on the web
 
-5. Additional topics
 
 ## Additional Resources
 
 RStudio's [Learn Shiny](https://shiny.rstudio.com/tutorial/) page has excellent tutorials and other learning resources
 
 [Function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/)
+
+A two-page Shiny ["Cheat Sheet"](https://rstudio.com/resources/cheatsheets/)
+
+A thorough introductory book (online version) ["Mastering Shiny](https://mastering-shiny.org/) by Hadley Wikham.
+
+Shiny [function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/)
+
+An excellent book on data visualization more generally is [Fundamentals of Data Visualization](https://www.oreilly.com/library/view/fundamentals-of-data/9781492031079/) by Claus Wilke. The book focuses on principles that are applicable no matter how the visualizations are generated, the code to generate all the example figures is in R.
 
 <br>

@@ -1,6 +1,8 @@
 ## Pre-workshop / as arriving
 
-Explore some examples of Shiny apps at: https://shiny.rstudio.com/gallery/
+Explore some examples of Shiny apps at the following [gallery](https://shiny.rstudio.com/gallery/)
+
+------
 
 ## R Shiny: What? Why?
 
@@ -18,9 +20,13 @@ https://shiny.rstudio.com/gallery/nutrition-calculator.html
 
 https://shiny.rstudio.com/gallery/nz-trade-dash.html
 
+------
+
 ## Install the R shiny package
 
 `install.packages("shiny")`
+
+------
 
 ## Structure of a Shiny App (server and ui)
 
@@ -39,6 +45,8 @@ We'll use the `ui` object to create the appearance information that goes to the 
 
 We'll use the `server` object to specify the work the server needs to do to make the app run, processing the data, doing calculations, and building plots and tables.
 
+------
+
 ## A basic template and empty app:
 
 ```
@@ -48,15 +56,17 @@ ui <- fluidPage(
     # Determine appearance and layout of the app
 )
 
-server <- function(input, output) {
+server <- function(input, output, session) {
     # Specify the code the server needs to run, e.g. to draw plots and process data
 }
 
 shinyApp(ui = ui, server = server)
 
 ```
-If you run this app and view in a browser, you can see that R has created html for the page. You can also see that it is using the Twitter Bootstrap framework for the interface.
+If you run this app and view in a browser, you can see that R has created html for the page. You can also see that it is using the Bootstrap framework for the interface.
 
+
+------
 ## Layout, panels, and html
 
 Example #1 - `titlePanel`, `SidebarLayout` with `sidebarPanel` and `mainPanel` (and `position` parameter)
@@ -72,6 +82,23 @@ You can also change the whole structure of your page by switching from `fluidPag
 Example #3b - `navbarPage` instead of `fluidPage`, with `tabPanel`s and a `navbarMenu` within the `navbarPage`. Each `tabPanel` can have its own content and panels within it. This example also includes an image (Note: if using an image src that is not external, put the image in a folder called `www` within your app folder. The precise name `www` is important. Shiny will share files in `www` with the user's browser.)
 
 More on layouts <a href='https://shiny.rstudio.com/articles/layout-guide.html'> here </a>.
+
+------
+
+## CSS styling and themes
+
+We can add custom CSS by putting a CSS file like `stylesheet.css` in the `www` subdirectory, whose contents are sent to user’s browser, and then including in our ui code something like:
+
+`ui = fluidPage( includeCSS(”stylesheet.css"), ...`
+
+We also can customize the look of our app by using Shiny themes. There are pre-existing themes and you can also customize your own.
+
+You can include a theme by installing the `shinythemes` package and then passing a theme argument to `fluidPage`:
+
+`ui = fluidPage( theme = shinytheme(“darkly”),...`
+
+
+------
 
 ## Widgits or *Input functions and *Outputs; introduction to creating reactivity and connecting inputs and outputs with *render expressions
 
@@ -112,6 +139,8 @@ See input and output options in the Shiny [function reference](https://shiny.rst
 
 View widget options in an app in this [widget gallery app](https://shiny.rstudio.com/gallery/widget-gallery.html).
 
+------
+
 ## You try (exercises):
 
 1. Edit the app in example 4 by adding another slider that works to control the number of samples drawn each time (so that we can adjust and not just draw 100 samples each time we draw the graph). (A solution is shown in `example4-updated.R`, but you should work to complete this exercise yourself before you look at it.)
@@ -122,82 +151,75 @@ View widget options in an app in this [widget gallery app](https://shiny.rstudio
 
 4. If you have extra time, use it to experiment with by using and connecting other `*Input` and `*Output` functions
 
-## Questions, comments, break
+
+------
+## Questions, comments
 
 ------
 
 ## Understanding and controlling reactivity
 
- **Reactive values** change in response to inputs. Previously, we used `*Input` functions to create reactive values that went into a named list that we called `input`. We use reactive values inside reactive functions, such as `renderPlot`, `renderDataTable`, and more.
+ **Reactive values** change in response to inputs. Previously, we used `*Input` functions to create reactive values that went into a named list that we called `input`. We use reactive values inside reactive functions, such as `renderPlot`, `renderDataTable`, etc.
 The reactive function outputs an **observer**.  Reactive values notify downstream objects that they've changed, and the object created by the reactive function responds. Thus, a `render*` function "knows" to rerun its code when the reactive value(s) it depends on changes.
  When a reactive value changes, it notifies downstream items that it's no longer valid; we call this process "invalidating."
 
 In addition to `renderPlot`, which we saw in previous examples, there are other `render*` functions that make different objects to display. All of these `render*` functions get a block of code as an argument, contained in curly braces. Whenever any reactive value that appears in the `render*` function is invalidated (i.e. changes), the whole code block will be rerun.
 
-Example 6 - renderDataTable, renderUI
-
-`reactive()` builds a reactive expression using a code block that you pass it as a parameter. We call reactive values like a function (i.e. with parentheses). A reactive expression stores its value in memory, and only reruns its code if it is invalid.
+### Example 6 - `reactive(), eventReactive()`
 
 `*Input` funtions create reactive values, but perhaps we want to have and use some reactive quantity that's not exactly what an *Input function gives us. We may want to use `reactive()`.
 
-`observe()` takes a single block of code, and reruns itswelf whenever any reactive value in the code changes (like a render function, but without creating returning something to display).
+`reactive()` builds a reactive expression using a code block that you pass it as a parameter. We call reactive values like a function (i.e. with parentheses). A reactive expression stores its value in memory, and only reruns its code if it is invalid.
 
-`isolate()` creates a non-reactive value.
+`eventReactive()` is similar but creates and returns a reactive expression that *only responds to the specified reactive value(s)*. So, its arguments are a reactive value(s) and a block of code. You can use these, e.g. to delay reactions.
 
-What if we want to use a reactive-value to create something that is non-reactive? We can use isolate, which takes a block of code as input. The block of code could include reactive values, but when they change the result of isolate() will not. So, for example, you could wrap something inside a render* function in isolate, and then the render* function wouldn't rerun if something changed that *only* appreared wihin the isolate statement.
+### Example 7 - `observeEvent, observe()
 
-observeEvent 
+This example also includes an interactive data table. We'll use data from an example R dataset, but you could certainly load your own from data. We'll put the code to load the data outside ui and server, since it only needs to run once. When you are making your own app, be sure you are sharing data appropriately, and not sharing data that is private.
 
-pass observeEvent a reactive value/expression (or list of them), and then a code block. The code block runs only if the value/expression in the list gets invalidated (doesn't rerun in response to any other reactive values it might contain!)
+`observeEvent()` has a similar structure to `eventReactive()` in that it takes as an argument specified reactive value(s) and a code block that re-runs only if the specified reactive value/expression gets invalidated (doesn't rerun in response to any other reactive values it might contain!). Unlike `eventReactive()` it does not return anything; we simply use it to run a certain block of code.
 
-QUESTION: can I pass reavtive expressions to observeEvent and eventReactive, or only reactive values?
+### observe()
+
+`observe()` takes a single block of code as an arguemtn, and reruns itswelf whenever *any* reactive value in the code changes (as `render*` functions do).
+
+### isolate()
+
+`isolate()` takes as input an expression that includes reactive values or expressoins, and creates a non-reactive value out of them. We can use isolate, which takes a block of code as input. The block of code could include reactive values, but when these reactive values invalidate, the result of isolate() does not invalidate and thus does not cause the code block around it to re-run. 
+
+### Some other useful functions: reactiveValues(), reactiveTimer()
+
+`reactiveValues()` makes a list of reactive values. `reactiveTimer()` creates and returns a reactive value that invalidates after a specified time period - e.g. `timer <- reactiveTimer(3000)` creates a reactive expression `timer` that invalidates every 3000 milliseconds.
 
 
-eventReactive creates and returns a reactive expression that only responds to the specified reactive values(s). So, its arguments are a reactive value(s) and a block of code. YOu can use these, e.g. to delay reactions.
-
-reactiveValues makes a list of reactive values. Helps you manage state.
-
-slide here of whether you want to run code on the server, create a reactive value, or create something to display
-
-EXAMPLE USING A CSV in data/file.csv.  Note that we could also have our app interact with remote data. When you making and publishing your own apps, you will need to make sure you are sharing data appropriately, and not sharing data that is private.
-
-## You try:
-Recreate another example app, or complete a partially made app.
-
-## Deplolying the app on the web
+------
+## Deploying a Shiny app on the internet
 
 Name your script App.R
 
-With shinyapps.io (includes free and paid options. Paid options allow for more apps, active hours, and support from R Studio)
+Deploy using one of three options:
+1. Deploy with shinyapps.io (includes free and paid options. Paid options allow for more apps, active hours, and support from R Studio)
+2. Shiny Server - if you want to host shiny apps yourself on a Linux machine that you have access to
+3. RStudio Connect - a paid server program with additional features
 
-Other options: 
-1. Shiny Server - if you want to host shiny apps yourself on a Linux machine that you have access to
-2. RStudio Connect - a paid server program with additional features
+See more about these options, including a feature comparsion [here](https://rstudio.com/products/shiny/shiny-server/).
 
-## Additional topics
-
-images
-
-custom styling with CSS. Shiny uses the Bootstrap 3 CSS framework.
-Use includeCSS("filename.css") and put `filename.css` in your app folder.  (There are several other ways to include CSS, too)
-More here: https://shiny.rstudio.com/articles/css.html
-HTML and CSS tutorials 
-https://www.w3schools.com/html/default.asp
-https://www.w3schools.com/css/default.asp
-
-Javascript: https://shiny.rstudio.com/articles/packaging-javascript.html
-
-Fluidrow
-
-
+-------
 ## Efficiency notes:
 
 Everything in app.R runs when the app is launched (so you could include one-time data-loading type code, library loades, etc. outside of ui or server).  The server code runs separately for each user, and code inside a render expressions re-runs anytime one of the inputs that appears inside the render expression gets changed.
 
+-------
 ## Resources
 
 Excellent tutorials and other resources on R Shiny from RStudio's [Learn Shiny](https://shiny.rstudio.com/tutorial/) page
 
-Function reference: https://shiny.rstudio.com/reference/shiny/1.4.0/
+[Function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/)
 
-NOTE ON WHERE TO PUT DATA FILES?
+A two-page Shiny ["Cheat Sheet"](https://rstudio.com/resources/cheatsheets/)
+
+A thorough introductory book (online version) ["Mastering Shiny](https://mastering-shiny.org/) by Hadley Wikham.
+
+Shiny [function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/)
+
+An excellent book on data visualization more generally is [Fundamentals of Data Visualization](https://www.oreilly.com/library/view/fundamentals-of-data/9781492031079/) by Claus Wilke. The book focuses on principles that are applicable no matter how the visualizations are generated, the code to generate all the example figures is in R.

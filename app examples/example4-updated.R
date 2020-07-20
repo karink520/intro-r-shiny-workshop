@@ -41,7 +41,7 @@ ui <- fluidPage(
   )
 )
 
-server <- function(input, output) {
+server <- function(input, output, session) {
   output$histogramOfGaussian <- renderPlot({
     hist(rnorm(input$numberOfSamples) + input$meanOfGaussian,
          main=input$title,

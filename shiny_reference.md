@@ -5,14 +5,11 @@ sidebarLayout |
 splitLayout |
 verticalLayout |
 flowLayout |
-|
 navbarPage |
 navbarMenu |
 fluidPage |
- |
 fluidRow | 
 column | 
-|
 tabsetPanel |
 tabPanel |
 navlistPanel |
@@ -21,7 +18,6 @@ sidebarPanel |
 conditionalPanel |
 mainPanel |
 wellPanel |
-|
 fixedPage |
 fixedRow |
 
@@ -75,11 +71,11 @@ renderUI | a Shiny tag object or HTML
 Function | Description/ details
 --------|-----
 reactive | Wraps a normal expression to create a reactive expression
+eventReactive |  Respond to "event-like" reactive inputs, values, and expressions.
 isolate | Executes the given expression in a scope where reactive values or expression can be read, but they cannot cause the reactive scope of the caller to be re-evaluated when they change. 
 observeEvent | Respond to "event-like" reactive inputs, values, and expressions.
-eventReactive |  Respond to "event-like" reactive inputs, values, and expressions.
-reactiveValues | Returns an object for storing reactive values. It is similar to a list, but with special capabilities for reactive programming. When you read a value from it, the calling reactive expression takes a reactive dependency on that value, and when you write to it, it notifies any reactive functions that depend on that value.
 observe | Creates an observer from the given expression. An observer is like a reactive expression in that it can read reactive values and call reactive expressions, and will automatically re-execute when those dependencies change. But unlike reactive expressions, it doesn't yield a result and can't be used as an input to other reactive expressions. Thus, observers are only useful for their side effects (for example, performing I/O).
+reactiveValues | Returns an object for storing reactive values. It is similar to a list, but with special capabilities for reactive programming. When you read a value from it, the calling reactive expression takes a reactive dependency on that value, and when you write to it, it notifies any reactive functions that depend on that value.
 
 # Acknowledgement and further reading
 

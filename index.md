@@ -26,8 +26,6 @@ The Shiny package allows you to use R to quickly and easily create and share a w
 3.  Make a free account at [shinyapps.io](https://www.shinyapps.io/) and follow steps 1 and 2 in the "Getting Started" panel you will see on your dashboard (Step 1 - Install rsconnect, Step 2 - authorize account).  You'll use shinyapp.io to host your app so that you can share it publicly. (5 min)
 4. Complete the [pre-course survey](https://docs.google.com/forms/d/e/1FAIpQLSf9sL4Xs8HQ0k--6eeXfc55geJbwQpx04nNmX7Hu9zISCZw3w/viewform?usp=sf_link) (5 min).
 
-Pre-course video-conference office hours:
-TBD: Please drop in with any questions, or if you run into trouble with the pre-workshop steps
 
 ## Workshop materials
 [Slides](shiny_workshop_slides.pdf)

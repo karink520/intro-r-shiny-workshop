@@ -69,19 +69,21 @@ If you run this app and view in a browser, you can see that R has created html f
 ------
 ## Layout, panels, and html
 
-Example #1 - `titlePanel`, `SidebarLayout` with `sidebarPanel` and `mainPanel` (and `position` parameter)
+Example #1 - The setup here includes: `titlePanel`, `SidebarLayout` with `sidebarPanel` and `mainPanel` (and `position` parameter).
 
-Example #2 - Create html with the R Shiny functions `h1`, `h2`, etc., and the `tags` named list:`tags$h1`, `tags$h2`, `tags$a(href="www.rstudio.com", "R studio site")`,  etc. (See full [tag glossary](https://shiny.rstudio.com/articles/tag-glossary.html)).
+Example #2 - We can create HTML with the R Shiny functions `h1`, `h2`, etc., and the `tags` named list:`tags$h1`, `tags$h2`, `tags$a(href="www.rstudio.com", "R studio site")`,  etc. 
 
-There are other functions for making panels in your page, and they are worth experimenting with. See all UI Layout functions in the Shiny [function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/).
+For more tags, see the full [tag glossary](https://shiny.rstudio.com/articles/tag-glossary.html).
 
-Example #3a - `wellPanel`, `tabsetPanel`, `tabPanel` (note that the `tabsetPanel` has the `tabPanels` within it).
+There are other functions for making panels in your page, and they are worth exploring and using. You can see all the UI Layout functions in the Shiny [function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/).
 
-You can also change the whole structure of your page by switching from `fluidPage` to `navbarPage`. A `navbarPage` has several `tabPanels` inside it, each of which has a title that goes at the top of the screen, and its own content (including panels within each tabPanel, if you like).
+Example #3a - Includes: `wellPanel`, `tabsetPanel`, `tabPanel` (note that the `tabsetPanel` has the `tabPanels` within it).
+
+We can also change the whole structure of our page by switching from `fluidPage` to `navbarPage`. A `navbarPage` has several `tabPanels` inside it, each of which has a title that goes at the top of the screen, and its own content (including panels within each tabPanel, if you like).
 
 Example #3b - `navbarPage` instead of `fluidPage`, with `tabPanel`s and a `navbarMenu` within the `navbarPage`. Each `tabPanel` can have its own content and panels within it. This example also includes an image (Note: if using an image src that is not external, put the image in a folder called `www` within your app folder. The precise name `www` is important. Shiny will share files in `www` with the user's browser.)
 
-More on layouts <a href='https://shiny.rstudio.com/articles/layout-guide.html'> here </a>.
+You can read more on layouts <a href='https://shiny.rstudio.com/articles/layout-guide.html'> here </a>.
 
 ------
 
@@ -100,9 +102,9 @@ You can include a theme by installing the `shinythemes` package and then passing
 
 ------
 
-## Widgits or *Input functions and *Outputs; introduction to creating reactivity and connecting inputs and outputs with *render expressions
+## Widgets or *Input functions and *Outputs; introduction to creating reactivity and connecting inputs and outputs with *render expressions
 
-Example #4 - First, we add `*Inputs` (widgets) and `*Outputs` to UI, each of which gets an id. These inputs and outputs will be passed to the server function in input and output lists, so you can access them within the server function using their ids to access them from the input and output named lists (e.g. as `input$myInputId` and `output$myOutputId`). We can use these input and output variables tell server what to do and how to connect inputs and outputs with `render*` functions. The `render*` functions set up reactivity so that **when any one of the inputs that the render function relies on changes, the output and display will change as well**.  
+Example #4 - First, we add `*Inputs` (widgets) and `*Outputs` to UI, each of which gets an id. These inputs and outputs will be passed to the server function in input and output lists, so we can use them within the server function by using their ids to access them from the input and output named lists (e.g. as `input$myInputId` and `output$myOutputId`). We can use these input and output variables tell server what to do and how to connect inputs and outputs with `render*` functions. The `render*` functions set up reactivity so that **when any one of the inputs that the render function relies on changes, the output and display will change as well**.  
 
 ### Widgets/`*Input` functions
 
@@ -207,7 +209,7 @@ See more about these options, including a feature comparsion [here](https://rstu
 -------
 ## Efficiency notes:
 
-Everything in app.R runs when the app is launched (so you could include one-time data-loading type code, library loades, etc. outside of ui or server).  The server code runs separately for each user, and code inside a render expressions re-runs anytime one of the inputs that appears inside the render expression gets changed.
+Everything in app.R runs when the app is launched (so you could include one-time data-loading type code, library loads, etc. outside of ui or server).  The server code runs separately for each user, and code inside a render expressions re-runs anytime one of the inputs that appears inside the render expression gets changed.
 
 -------
 ## Resources

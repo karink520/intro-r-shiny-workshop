@@ -36,6 +36,8 @@ TBD: Please drop in with any questions, or if you run into trouble with the pre-
 
 [Abbreviated Shiny function reference](shiny_reference.md) (adapted from Shiny's [function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/))
 
+[Examples](app_examples.zip)
+
 
 
 ## Topic outline

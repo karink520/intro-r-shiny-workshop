@@ -1,11 +1,11 @@
-# An example with a datatable, observe/observeEvent and isolate
+# An example with a datatable and observeEvent()
 library(shiny)
 
 
 data <- data.frame(datasets::ChickWeight)
 
 ui <- fluidPage(
-    titlePanel("Tables and observeEvent()"),
+    titlePanel("DataTables and observeEvent()"),
     sidebarLayout(
       sidebarPanel(
         numericInput("numRows", "Number of Rows", value=10),
@@ -26,14 +26,14 @@ server <- function(input, output, session) {
   observeEvent(input$reset, {
     updateNumericInput(session, "numRows", value = 10)
     updateCheckboxGroupInput(session, "dietType", selected=list(1, 2, 3, 4))
-    message("user pressed reset")
+    message("user pressed reset") # observeEvent can also be used for debugging
     message(input$dietType)
     }
   )
   
   output$table <- DT::renderDataTable(subset(data,Diet %in% input$dietType),
     options = list(
-      pageLength = isolate(input$numRows)
+      pageLength = input$numRows
     )
   )
 }

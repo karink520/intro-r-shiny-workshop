@@ -1,7 +1,7 @@
 library(shiny)
 
 ui <- fluidPage(
-  titlePanel("En Example To Match"),
+  titlePanel("reactive() and eventReactive()"),
   sidebarLayout(
     sidebarPanel(
       sliderInput(

@@ -149,7 +149,7 @@ View widget options in an app in this [widget gallery app](https://shiny.rstudio
 
 3. Try making from scratch a Shiny app that looks and works like the example [here](https://karinknudson.shinyapps.io/example5_apptomatch/). You *can* look at the code in `example5_apptomatch/app.R` if you are really stuck, but you will learn best if you struggle with the process some yourself, so don't shortchange yourself by cutting short that struggle too early!
 
-4. If you have extra time, use it to experiment with by using and connecting other `*Input` and `*Output` functions
+4. If you have extra time, use it to experiment with by using and connecting other `*Input` and `*Output` functions to make your own app, or play with layouts, styles, and themes.
 
 
 ------
@@ -173,21 +173,21 @@ In addition to `renderPlot`, which we saw in previous examples, there are other 
 
 `eventReactive()` is similar but creates and returns a reactive expression that *only responds to the specified reactive value(s)*. So, its arguments are a reactive value(s) and a block of code. You can use these, e.g. to delay reactions.
 
-### Example 7 - `observeEvent, observe()
+### Example 7 - `observeEvent, observe()`
 
 This example also includes an interactive data table. We'll use data from an example R dataset, but you could certainly load your own from data. We'll put the code to load the data outside ui and server, since it only needs to run once. When you are making your own app, be sure you are sharing data appropriately, and not sharing data that is private.
 
 `observeEvent()` has a similar structure to `eventReactive()` in that it takes as an argument specified reactive value(s) and a code block that re-runs only if the specified reactive value/expression gets invalidated (doesn't rerun in response to any other reactive values it might contain!). Unlike `eventReactive()` it does not return anything; we simply use it to run a certain block of code.
 
-### observe()
+### `observe()`
 
 `observe()` takes a single block of code as an arguemtn, and reruns itswelf whenever *any* reactive value in the code changes (as `render*` functions do).
 
-### isolate()
+### `isolate()`
 
 `isolate()` takes as input an expression that includes reactive values or expressoins, and creates a non-reactive value out of them. We can use isolate, which takes a block of code as input. The block of code could include reactive values, but when these reactive values invalidate, the result of isolate() does not invalidate and thus does not cause the code block around it to re-run. 
 
-### Some other useful functions: reactiveValues(), reactiveTimer()
+### Some other useful functions: `reactiveValues(), reactiveTimer()`
 
 `reactiveValues()` makes a list of reactive values. `reactiveTimer()` creates and returns a reactive value that invalidates after a specified time period - e.g. `timer <- reactiveTimer(3000)` creates a reactive expression `timer` that invalidates every 3000 milliseconds.
 

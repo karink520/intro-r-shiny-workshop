@@ -6,7 +6,7 @@ ui <- navbarPage(
   tabPanel("Information"),
   tabPanel("Map"),
   navbarMenu("More",
-      tabPanel("Contact Us"),
+      tabPanel("Contact Us")
   )
   
 )

@@ -1,6 +1,7 @@
 ## Layout and panel functions
-function | 
-----------|
+
+| function | 
+| ----------|
 sidebarLayout | 
 splitLayout |
 verticalLayout |

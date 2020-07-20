@@ -85,6 +85,9 @@ Example #3b - `navbarPage` instead of `fluidPage`, with `tabPanel`s and a `navba
 
 You can read more on layouts <a href='https://shiny.rstudio.com/articles/layout-guide.html'> here </a>.
 
+If you would like to learn more about HTML itself, try this [HTML tutorial from w3schools](https://www.w3schools.com/html/default.asp).
+
+
 ------
 
 ## CSS styling and themes
@@ -99,6 +102,7 @@ You can include a theme by installing the `shinythemes` package and then passing
 
 `ui = fluidPage( theme = shinytheme(“darkly”),...`
 
+To learn more about CSS, check out the excellent [CSS tutorial from w3schools](https://www.w3schools.com/css/).
 
 ------
 
@@ -225,3 +229,5 @@ A thorough introductory book (online version) ["Mastering Shiny](https://masteri
 Shiny [function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/)
 
 An excellent book on data visualization more generally is [Fundamentals of Data Visualization](https://www.oreilly.com/library/view/fundamentals-of-data/9781492031079/) by Claus Wilke. The book focuses on principles that are applicable no matter how the visualizations are generated, the code to generate all the example figures is in R.
+
+For 

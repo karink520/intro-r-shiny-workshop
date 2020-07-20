@@ -76,6 +76,8 @@ A thorough introductory book (online version) ["Mastering Shiny](https://masteri
 
 Shiny [function reference](https://shiny.rstudio.com/reference/shiny/1.4.0/)
 
-An excellent book on data visualization more generally is [Fundamentals of Data Visualization](https://www.oreilly.com/library/view/fundamentals-of-data/9781492031079/) by Claus Wilke. The book focuses on principles that are applicable no matter how the visualizations are generated, the code to generate all the example figures is in R.
+An excellent book on data visualization more generally is [Fundamentals of Data Visualization](https://www.oreilly.com/library/view/fundamentals-of-data/9781492031079/) by Claus Wilke. The book focuses on principles that are applicable no matter how the visualizations are generated, the code to generate all the example figures is in R using ggplot2.
+
+A data visualization book that also teaches how to create visualizations in R and ggplot2 is Data Visualization: A Practical Introduction, by Kieran Healy.
 
 <br>

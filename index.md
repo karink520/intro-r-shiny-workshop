@@ -24,8 +24,6 @@ The Shiny package allows you to use R to quickly and easily create and share a w
 1. [Download](https://cran.case.edu/) and install R, if you do not already have it. (5 min)
 2. [Install RStudio Desktop](https://rstudio.com/products/rstudio/download/), (the free open source license suffices). (5 min)
 3.  Make a free account at [shinyapps.io](https://www.shinyapps.io/) and follow steps 1 and 2 in the "Getting Started" panel you will see on your dashboard (Step 1 - Install rsconnect, Step 2 - authorize account).  You'll use shinyapp.io to host your app so that you can share it publicly. (5 min)
-4. Complete the [pre-course survey](https://docs.google.com/forms/d/e/1FAIpQLSf9sL4Xs8HQ0k--6eeXfc55geJbwQpx04nNmX7Hu9zISCZw3w/viewform?usp=sf_link) (5 min).
-
 
 ## Workshop materials
 [Slides](shiny_workshop_slides.pdf)
